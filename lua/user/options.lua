@@ -10,6 +10,7 @@ local options = {
 	splitbelow = true,
 	splitright = true,
 	swapfile = false,
+    termguicolors = true,
 	timeoutlen = 100,
 	undofile = true,
 	updatetime = 300,
