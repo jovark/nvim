@@ -1,4 +1,4 @@
-# My nvim setup files 
+# My Neovim setup files 
 
-### Folder location
+#### Folder location:
 C:\Users\Joonatan\AppData\Local
