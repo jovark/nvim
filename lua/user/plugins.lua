@@ -43,9 +43,9 @@ return packer.startup(function(use)
 
     -- My plugins here
     use "wbthomason/packer.nvim" -- Have packer manage itself
-    use "nvim-lua/popup.nvim" -- Implementation of the Popup API 
+    use "nvim-lua/popup.nvim" -- Implementation of the Popup API
     use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
-    
+
     -- Colorschemes
     use "lunarvim/colorschemes"
     -- use { "ellisonleao/gruvbox.nvim" }
@@ -57,7 +57,6 @@ return packer.startup(function(use)
     use "hrsh7th/cmp-cmdline" -- cmdline completions
     use "saadparwaiz1/cmp_luasnip" -- snippet completions
     use "hrsh7th/cmp-nvim-lsp"
-    use "hrsh7th/cmp-nvim-lua"
 
     -- snippets
     use "L3MON4D3/LuaSnip" --snippet engine
@@ -66,7 +65,17 @@ return packer.startup(function(use)
     -- LSP
     use "neovim/nvim-lspconfig" -- enable LSP
     use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-    
+
+    -- Telescope
+    use "nvim-telescope/telescope.nvim"
+    use 'nvim-telescope/telescope-media-files.nvim'
+
+    -- Treesitter
+    use {
+        "nvim-treesitter/nvim-treesitter",
+        run = ":TSUpdate",
+    }
+
     -- At the end after all the plugins
     if PACKER_BOOTSTRAP then
         require("packer").sync()

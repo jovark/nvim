@@ -27,7 +27,7 @@ k("n", "<leader>e", ":Lex 20<cr>", opts)
 k("n", "<S-l>", ":bnext<CR>", opts)
 k("n", "<S-h>", ":bprevios<CR>", opts)
 
--- Insert -- 
+-- Insert --
 k("i", "jk", "<ESC>", opts)
 
 -- Visual --
@@ -47,4 +47,6 @@ k("x", "<K>", ":move '<-2<CR>gv-gv", opts)
 k("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 k("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
-
+-- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
+k("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+k("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
