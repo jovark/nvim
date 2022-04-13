@@ -46,6 +46,7 @@ return packer.startup(function(use)
     use "nvim-lua/popup.nvim" -- Implementation of the Popup API
     use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
     use "windwp/nvim-autopairs" -- Autopairs
+    use "numToStr/Comment.nvim" -- Easily comment stuff
 
     -- Colorschemes
     use "lunarvim/colorschemes"
@@ -75,6 +76,7 @@ return packer.startup(function(use)
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
     }
+    use "JoosepAlviste/nvim-ts-context-commentstring"
 
     -- At the end after all the plugins
     if PACKER_BOOTSTRAP then
