@@ -47,6 +47,10 @@ return packer.startup(function(use)
     use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
     use "windwp/nvim-autopairs" -- Autopairs
     use "numToStr/Comment.nvim" -- Easily comment stuff
+    use 'kyazdani42/nvim-web-devicons'
+    use 'kyazdani42/nvim-tree.lua'
+    use 'akinsho/bufferline.nvim'
+    use 'moll/vim-bbye'
 
     -- Colorschemes
     use "lunarvim/colorschemes"
@@ -77,6 +81,10 @@ return packer.startup(function(use)
         run = ":TSUpdate",
     }
     use "JoosepAlviste/nvim-ts-context-commentstring"
+
+    -- Git
+    use "lewis6991/gitsigns.nvim"
+
 
     -- At the end after all the plugins
     if PACKER_BOOTSTRAP then
