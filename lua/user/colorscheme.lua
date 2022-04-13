@@ -7,6 +7,7 @@ catch /^Vim\%((\a\+)\)\=:E185/
 endtry
 ]]
 
+-- Transparency --
 vim.cmd([[
     highlight Normal guibg=none,
     highlight NonText guibg=none,
@@ -14,3 +15,6 @@ vim.cmd([[
     highlight NvimTreeNormal guibg=none,
     highlight NvimTreeVertSplit guibg=none,
 ]])
+
+-- Disavle italics --
+vim.cmd([[highlight comment gui=none]])

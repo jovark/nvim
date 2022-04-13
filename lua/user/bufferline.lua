@@ -74,7 +74,7 @@ bufferline.setup {
   highlights = {
     fill = {
       guifg = { attribute = "fg", highlight = "#ff0000" },
-      guibg = none,
+      guibg = "none",
     },
     background = {
       guifg = { attribute = "fg", highlight = "TabLine" },
@@ -121,17 +121,17 @@ bufferline.setup {
     duplicate_selected = {
       guifg = { attribute = "fg", highlight = "TabLineSel" },
       guibg = { attribute = "bg", highlight = "TabLineSel" },
-      gui = "italic",
+      gui = "none",
     },
     duplicate_visible = {
       guifg = { attribute = "fg", highlight = "TabLine" },
       guibg = { attribute = "bg", highlight = "TabLine" },
-      gui = "italic",
+      gui = "none",
     },
     duplicate = {
       guifg = { attribute = "fg", highlight = "TabLine" },
       guibg = { attribute = "bg", highlight = "TabLine" },
-      gui = "italic",
+      gui = "none",
     },
 
     modified = {
