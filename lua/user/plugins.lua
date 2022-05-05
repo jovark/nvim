@@ -51,9 +51,11 @@ return packer.startup(function(use)
     use 'kyazdani42/nvim-tree.lua'
     use 'akinsho/bufferline.nvim'
     use 'moll/vim-bbye'
+    --    use 'norcalli/nvim-colorizer.lua'
 
     -- Colorschemes
     use "lunarvim/colorschemes"
+    use "ellisonleao/gruvbox.nvim"
 
     -- cmp plugins
     use "hrsh7th/nvim-cmp" -- The completion plugin
