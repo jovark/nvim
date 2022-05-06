@@ -6,13 +6,11 @@ if not status_ok then
     return
 end
 
-vim.g.dracula_transparent_bg = true
-
 -- Transparency --
---vim.cmd([[
---    highlight Normal guibg=none,
---    highlight NonText guibg=none,
---    highlight SignColumn guibg=none,
---    highlight NvimTreeNormal guibg=none,
---    highlight NvimTreeVertSplit guibg=none,
--- ]])
+vim.cmd([[
+    highlight Normal guibg=none,
+    highlight NonText guibg=none,
+    highlight SignColumn guibg=none,
+    highlight NvimTreeNormal guibg=none,
+    highlight NvimTreeVertSplit guibg=none,
+ ]])

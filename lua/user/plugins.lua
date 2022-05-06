@@ -85,7 +85,7 @@ return packer.startup(function(use)
     use {
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
-    }
+      }
     use "JoosepAlviste/nvim-ts-context-commentstring"
 
     -- Git
