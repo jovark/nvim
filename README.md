@@ -1,4 +1,7 @@
 # My Neovim setup files 
 
-#### Folder location:
-> C:\Users\Joonatan\AppData\Local
+#### Folder location in Windows:
+> C:\Users\Joonatan\AppData\Local\
+
+#### Folder location in Linux:
+> ~/.config/
