@@ -5,5 +5,3 @@
 
 #### Folder location in Linux:
 > ~/.config/
-
-testing 
