@@ -53,11 +53,9 @@ return packer.startup(function(use)
     use 'moll/vim-bbye'
     use "folke/which-key.nvim"
     use "norcalli/nvim-colorizer.lua"
-
+    use "ThePrimeagen/harpoon"
 
     -- Colorschemes
-    -- use "lunarvim/colorschemes"
-    -- use "ellisonleao/gruvbox.nvim"
     use 'Mofiqul/dracula.nvim'
 
     -- cmp plugins
