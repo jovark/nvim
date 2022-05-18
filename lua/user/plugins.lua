@@ -1,7 +1,7 @@
 local fn = vim.fn
 
 -- Automatically install packer
-local install_path = fn.stdpath ("data").."site/pack/packer/start/packer.nvim"
+local install_path = fn.stdpath("data") .. "site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
     PACKER_BOOTSTRAP = fn.system {
         "git",
@@ -48,12 +48,14 @@ return packer.startup(function(use)
     use "windwp/nvim-autopairs" -- Autopairs
     use "numToStr/Comment.nvim" -- Easily comment stuff
     use 'kyazdani42/nvim-web-devicons'
-    use { 'kyazdani42/nvim-tree.lua' }
+    use 'kyazdani42/nvim-tree.lua'
     use 'akinsho/bufferline.nvim'
     use 'moll/vim-bbye'
     use "folke/which-key.nvim"
     use "norcalli/nvim-colorizer.lua"
     use "ThePrimeagen/harpoon"
+    use "Mephistophiles/surround.nvim"
+    use "akinsho/toggleterm.nvim"
 
     -- Colorschemes
     use 'Mofiqul/dracula.nvim'
@@ -84,7 +86,7 @@ return packer.startup(function(use)
     use {
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
-      }
+    }
     use "JoosepAlviste/nvim-ts-context-commentstring"
 
     -- Git
@@ -96,5 +98,3 @@ return packer.startup(function(use)
         require("packer").sync()
     end
 end)
-
-

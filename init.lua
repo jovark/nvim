@@ -13,6 +13,8 @@ require "user.nvim-tree"
 require "user.bufferline"
 require "user.colorizer"
 require "user.whichkey"
+require "user.surround"
+require "user.toggleterm"
 
 -- cursorline underline instead of highlight
 vim.cmd([[:hi clear CursorLine]])
