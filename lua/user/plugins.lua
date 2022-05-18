@@ -58,7 +58,8 @@ return packer.startup(function(use)
     use "akinsho/toggleterm.nvim"
 
     -- Colorschemes
-    use 'Mofiqul/dracula.nvim'
+    -- use 'Mofiqul/dracula.nvim'
+    use 'Xpunn/dracula.nvim-without-italics'
 
     -- cmp plugins
     use "hrsh7th/nvim-cmp" -- The completion plugin
