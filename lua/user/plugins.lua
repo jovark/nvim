@@ -56,10 +56,11 @@ return packer.startup(function(use)
     use "ThePrimeagen/harpoon"
     use "Mephistophiles/surround.nvim"
     use "akinsho/toggleterm.nvim"
+    use 'nvim-lualine/lualine.nvim'
 
     -- Colorschemes
-    -- use 'Mofiqul/dracula.nvim'
     use 'Xpunn/dracula.nvim-without-italics'
+    use 'Shatur/neovim-ayu'
 
     -- cmp plugins
     use "hrsh7th/nvim-cmp" -- The completion plugin

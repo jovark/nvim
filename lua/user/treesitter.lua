@@ -4,8 +4,8 @@ if not status_ok then
 end
 
 configs.setup {
-    ensure_installed = "all",
-    sync_install = false, 
+    ensure_installed = { "all" },
+    sync_install = false,
     ignore_install = { "" }, -- List of parsers to ignore installing
     autopairs = {
         enable = true,
@@ -14,8 +14,8 @@ configs.setup {
         enable = true, -- false will disable the whole extension
         disable = { "css" }, -- list of language that will be disabled
         additional_vim_regex_highlighting = true,
-  },
-  indent = { enable = true, disable = { "yaml", "css" } },
+    },
+    indent = { enable = true, disable = { "yaml", "css" } },
     context_commentstring = {
         enable = true,
         enable_autocmd = false,
