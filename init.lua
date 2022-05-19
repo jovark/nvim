@@ -15,7 +15,7 @@ require "user.colorizer"
 require "user.whichkey"
 require "user.surround"
 require "user.toggleterm"
--- require "user.lualine"
+require "user.lualine"
 
 -- cursorline underline instead of highlight
 vim.cmd([[:hi clear CursorLine]])
