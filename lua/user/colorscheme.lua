@@ -13,4 +13,8 @@ vim.cmd([[
     highlight SignColumn guibg=none,
     highlight NvimTreeNormal guibg=none,
     highlight NvimTreeVertSplit guibg=none,
+    highlight BufferLineFill guibg=none,
+    highlight BufferLineBackground guibg=none,
+    highlight BufferLineSeparator guibg=none,
+    highlight BufferLineCloseButton guibg=none,
  ]])
