@@ -86,13 +86,11 @@ local m_opts = {
 }
 
 local m_mappings = {
-    ['1'] = { '<cmd>lua require("harpoon.ui").nav_file(1)<cr>', 'File 1' },
-    ['2'] = { '<cmd>lua require("harpoon.ui").nav_file(2)<cr>', 'File 2' },
-    ['3'] = { '<cmd>lua require("harpoon.ui").nav_file(3)<cr>', 'File 3' },
-    ['4'] = { '<cmd>lua require("harpoon.ui").nav_file(4)<cr>', 'File 4' },
+    ['j'] = { '<cmd>lua require("harpoon.ui").nav_file(1)<cr>', 'File 1' },
+    ['k'] = { '<cmd>lua require("harpoon.ui").nav_file(2)<cr>', 'File 2' },
+    ['l'] = { '<cmd>lua require("harpoon.ui").nav_file(3)<cr>', 'File 3' },
+    [';'] = { '<cmd>lua require("harpoon.ui").nav_file(4)<cr>', 'File 4' },
     m = { '<cmd>lua require("harpoon.mark").add_file()<cr>', "Harpoon" },
-    j = { '<cmd>lua require("harpoon.ui").nav_next()<cr>', "Next" },
-    k = { '<cmd>lua require("harpoon.ui").nav_prev()<cr>', "Prev" },
     u = { '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', "Harpoon UI" },
 }
 
