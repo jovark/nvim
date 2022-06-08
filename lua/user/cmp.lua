@@ -1,4 +1,4 @@
-local cmp_status_ok, cmp = pcall(require, "cmp")
+
 if not cmp_status_ok then
     return
 end
@@ -149,5 +149,5 @@ tabnine:setup({
     sort = true,
     run_on_every_keystroke = true,
     snippet_placeholder = "..",
-    show_prediction_strength = false,
+    show_prediction_strength = true,
 })
