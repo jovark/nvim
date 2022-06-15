@@ -42,7 +42,7 @@ nvim_tree.setup {
             show = {
                 file = true,
                 folder = true,
-                follder_arrow = false,
+                folder_arrow = false,
                 git = true
             },
             glyphs = {
