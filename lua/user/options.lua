@@ -1,4 +1,6 @@
-local options = { backup = false,
+local options = {
+    fileencoding = "utf-8",
+    backup = false,
     clipboard = "unnamedplus",
     cmdheight = 2,
     completeopt = { "menuone", "noselect" },
