@@ -42,58 +42,59 @@ packer.init {
 return packer.startup(function(use)
 
     -- My plugins here
-    use "wbthomason/packer.nvim" -- Have packer manage itself
-    use "nvim-lua/popup.nvim" -- Implementation of the Popup API
-    use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
-    use "windwp/nvim-autopairs" -- Autopairs
-    use "numToStr/Comment.nvim" -- Easily comment stuff
-    use 'kyazdani42/nvim-web-devicons'
-    use 'kyazdani42/nvim-tree.lua'
-    use 'akinsho/bufferline.nvim'
-    use 'moll/vim-bbye'
-    use "folke/which-key.nvim"
-    use "norcalli/nvim-colorizer.lua"
-    use "ThePrimeagen/harpoon"
-    use "Mephistophiles/surround.nvim"
-    use "akinsho/toggleterm.nvim"
-    use 'nvim-lualine/lualine.nvim'
+    use { "wbthomason/packer.nvim" }
+    use { "nvim-lua/popup.nvim" }
+    use { "nvim-lua/plenary.nvim" }
+    use { "windwp/nvim-autopairs" }
+    use { "numToStr/Comment.nvim" }
+    use { "kyazdani42/nvim-web-devicons" }
+    use { "kyazdani42/nvim-tree.lua" }
+    use { "akinsho/bufferline.nvim" }
+    use { "moll/vim-bbye" }
+    use { "folke/which-key.nvim" }
+    use { "norcalli/nvim-colorizer.lua" }
+    use { "ThePrimeagen/harpoon" }
+    use { "Mephistophiles/surround.nvim" }
+    use { "akinsho/toggleterm.nvim" }
+    use { "nvim-lualine/lualine.nvim" }
 
     -- Colorschemes
-    use 'Xpunn/dracula.nvim-without-italics'
-    use 'Shatur/neovim-ayu'
+    use { "Xpunn/dracula.nvim-without-italics" }
+    use { "Shatur/neovim-ayu" }
 
     -- cmp plugins
-    use "hrsh7th/nvim-cmp" -- The completion plugin
-    use "hrsh7th/cmp-buffer" -- buffer completions
-    use "hrsh7th/cmp-path" -- path completions
-    use "hrsh7th/cmp-cmdline" -- cmdline completions
-    use "saadparwaiz1/cmp_luasnip" -- snippet completions
-    use "hrsh7th/cmp-nvim-lsp"
-    use "hrsh7th/cmp-nvim-lua"
-    use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
+    use { "hrsh7th/nvim-cmp" }
+    use { "hrsh7th/cmp-buffer" }
+    use { "hrsh7th/cmp-path" }
+    use { "hrsh7th/cmp-cmdline" }
+    use { "saadparwaiz1/cmp_luasnip" }
+    use { "hrsh7th/cmp-nvim-lsp" }
+    use { "hrsh7th/cmp-nvim-lua" }
+    use { "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" }
+    use { "github/copilot.vim" }
 
     -- snippets
-    use "L3MON4D3/LuaSnip" --snippet engine
-    use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+    use { "L3MON4D3/LuaSnip" }
+    use { "rafamadriz/friendly-snippets" }
 
     -- LSP
-    use "neovim/nvim-lspconfig" -- enable LSP
-    use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-    use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
-    use "jose-elias-alvarez/null-ls.nvim"
+    use { "neovim/nvim-lspconfig" }
+    use { "williamboman/nvim-lsp-installer" }
+    use { "tamago324/nlsp-settings.nvim" }
+    use { "jose-elias-alvarez/null-ls.nvim" }
 
     -- Telescope
-    use "nvim-telescope/telescope.nvim"
+    use { "nvim-telescope/telescope.nvim" }
 
     -- Treesitter
     use {
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
     }
-    use "JoosepAlviste/nvim-ts-context-commentstring"
+    use { "JoosepAlviste/nvim-ts-context-commentstring" }
 
     -- Git
-    use "lewis6991/gitsigns.nvim"
+    use { "lewis6991/gitsigns.nvim" }
 
 
     -- At the end after all the plugins

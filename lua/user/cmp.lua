@@ -136,7 +136,7 @@ cmp.setup {
         winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
     },
     experimental = {
-        ghost_text = true,
+        ghost_text = false,
         -- native_menu = false,
     },
 }
