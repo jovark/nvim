@@ -7,14 +7,33 @@ if not status_ok then
 end
 
 -- Transparency --
-vim.cmd([[
-    highlight Normal guibg=none,
-    highlight NonText guibg=none,
-    highlight SignColumn guibg=none,
-    highlight NvimTreeNormal guibg=none,
-    highlight NvimTreeVertSplit guibg=none,
-    highlight BufferLineFill guibg=none,
-    highlight BufferLineBackground guibg=none,
-    highlight BufferLineSeparator guibg=none,
-    highlight BufferLineCloseButton guibg=none,
- ]])
+local hl = function(thing, opts)
+    vim.api.nvim_set_hl(0, thing, opts)
+end
+
+vim.cmd([[highlight BufferlineFill guibg=none]])
+vim.cmd([[highlight NvimTreeVertSplit guibg=none]])
+
+hl("Normal", {
+    bg = "None"
+})
+
+hl("SignColumn", {
+    bg = "None"
+})
+
+hl("BufferLineBackground", {
+    bg = "None"
+})
+
+hl("BufferLineSeparator", {
+    bg = "None"
+})
+
+hl("BufferLineCloseButton", {
+    bg = "None"
+})
+
+hl("LineNr", {
+    fg = "#5ccfe6"
+})
