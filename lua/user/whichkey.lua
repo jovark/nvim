@@ -97,7 +97,7 @@ local m_mappings = {
 local mappings = {
     ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
     ["h"] = { "<cmd>nohlsearch<CR>", "No HL" },
-    ["/"] = { '<cmd>lua require("Comment.api").toggle_current_linewise()<CR>', "Comment" },
+    ["/"] = { '<cmd>lua require("Comment.api").toggle.linewise.comment()<CR>', "Comment" },
     ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
     ["gy"] = "Link",
 
@@ -189,12 +189,6 @@ local mappings = {
         f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
         h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
         v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
-    },
-
-    T = {
-        name = "Treesitter",
-        h = { "<cmd>TSHighlightCapturesUnderCursor<cr>", "Highlight" },
-        p = { "<cmd>TSPlaygroundToggle<cr>", "Playground" },
     },
 }
 
