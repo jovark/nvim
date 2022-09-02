@@ -97,7 +97,7 @@ local m_mappings = {
 local mappings = {
     ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
     ["h"] = { "<cmd>nohlsearch<CR>", "No HL" },
-    ["/"] = { '<cmd>lua require("Comment.api").toggle.linewise.comment()<CR>', "Comment" },
+    ["/"] = { '<cmd>lua require("Comment.api").toggle.linewise.current()<CR>', "Comment" },
     ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
     ["gy"] = "Link",
 
