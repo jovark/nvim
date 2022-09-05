@@ -61,6 +61,7 @@ return packer.startup(function(use)
     -- Colorschemes
     use { "Xpunn/dracula.nvim-without-italics" }
     use { "Shatur/neovim-ayu" }
+    use { "folke/tokyonight.nvim" }
 
     -- cmp plugins
     use { "hrsh7th/nvim-cmp" }

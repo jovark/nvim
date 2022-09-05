@@ -1,4 +1,15 @@
-local colorscheme = "ayu-mirage"
+local colorscheme = "tokyonight"
+vim.g.tokyonight_style = "night"
+
+-- Disables all italics --
+vim.g.tokyonight_italic_comments = false
+vim.g.tokyonight_italic_keywords = false
+vim.g.tokyonight_italic_functions = false
+vim.g.tokyonight_italic_keywords = false
+
+-- Transparency --
+vim.g.tokyonight_transparent = true
+vim.g.tokyonight_transparent_sidebar = true
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then
@@ -6,34 +17,11 @@ if not status_ok then
     return
 end
 
--- Transparency --
+-- LineNr --
 local hl = function(thing, opts)
     vim.api.nvim_set_hl(0, thing, opts)
 end
 
-vim.cmd([[highlight BufferlineFill guibg=none]])
-vim.cmd([[highlight NvimTreeVertSplit guibg=none]])
-
-hl("Normal", {
-    bg = "None"
-})
-
-hl("SignColumn", {
-    bg = "None"
-})
-
-hl("BufferLineBackground", {
-    bg = "None"
-})
-
-hl("BufferLineSeparator", {
-    bg = "None"
-})
-
-hl("BufferLineCloseButton", {
-    bg = "None"
-})
-
 hl("LineNr", {
-    fg = "#5ccfe6"
+    fg = "#7dcfff"
 })
