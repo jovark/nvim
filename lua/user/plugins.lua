@@ -62,6 +62,7 @@ return packer.startup(function(use)
     use { "Xpunn/dracula.nvim-without-italics" }
     use { "Shatur/neovim-ayu" }
     use { "folke/tokyonight.nvim" }
+    use { "catppuccin/nvim", as = "catppuccin" }
 
     -- cmp plugins
     use { "hrsh7th/nvim-cmp" }
@@ -94,6 +95,7 @@ return packer.startup(function(use)
     }
     use { "JoosepAlviste/nvim-ts-context-commentstring" }
     use { "nvim-treesitter/nvim-treesitter-context" }
+    use { "nvim-treesitter/playground" }
 
     -- Git
     use { "lewis6991/gitsigns.nvim" }

@@ -1,15 +1,66 @@
-local colorscheme = "tokyonight"
-vim.g.tokyonight_style = "night"
+local colorscheme = "catppuccin"
+local line_nr_color
 
--- Disables all italics --
-vim.g.tokyonight_italic_comments = false
-vim.g.tokyonight_italic_keywords = false
-vim.g.tokyonight_italic_functions = false
-vim.g.tokyonight_italic_keywords = false
+if colorscheme == "catppuccin" then
+    vim.g.catpuccin_flavor = "mocha"
 
--- Transparency --
-vim.g.tokyonight_transparent = true
-vim.g.tokyonight_transparent_sidebar = true
+    require("catppuccin").setup({
+        transparent_background = true,
+        term_colors = true,
+        compile = {
+            enable = true,
+            stylesheets = true,
+            path = vim.fn.stdpath "cache" .. "/catppuccin"
+        },
+        styles = {
+            comments = {},
+            conditionals = {},
+            functions = {},
+            loops = {},
+            keywords = {},
+            strings = {},
+            variables = {},
+            numbers = {},
+            booleans = {},
+            properties = {},
+            types = {},
+            operators = {},
+        },
+        integrations = {
+            cmp = true,
+            nvimtree = true,
+            treesitter_context = true,
+            treesitter = true,
+            telescope = true,
+            which_key = true,
+        },
+        custom_highlights = {
+            TSParameter = { style = {} },
+            DiagnosticHint = { style = {} },
+            DiagnosticError = { style = {} },
+            DiagnosticInfo = { style = {} },
+            DiagnosticWarn = { style = {} },
+        }
+    })
+
+    local colors = require("catppuccin.palettes").get_palette()
+    line_nr_color = colors.blue
+
+elseif colorscheme == "tokyonight" then
+    vim.g.tokyonight_style = "night"
+
+    -- Disables all italics --
+    vim.g.tokyonight_italic_comments = false
+    vim.g.tokyonight_italic_keywords = false
+    vim.g.tokyonight_italic_functions = false
+    vim.g.tokyonight_italic_keywords = false
+
+    -- Transparency --
+    vim.g.tokyonight_transparent = true
+    vim.g.tokyonight_transparent_sidebar = true
+
+    line_nr_color = "#7aa2f7"
+end
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not status_ok then
@@ -17,11 +68,14 @@ if not status_ok then
     return
 end
 
--- LineNr --
 local hl = function(thing, opts)
     vim.api.nvim_set_hl(0, thing, opts)
 end
 
+-- LineNr --
 hl("LineNr", {
-    fg = "#7dcfff"
+    fg = line_nr_color,
 })
+
+-- Couldn't get bufferline italics disabled any other way --
+vim.cmd [[ highlight BufferLineBufferSelected gui=bold ]]
