@@ -1,7 +1,7 @@
 local options = {
     fileencoding = "utf-8",
     backup = false,
-    clipboard = "unnamedplus",
+    clipboard = "",
     cmdheight = 2,
     completeopt = { "menuone", "noselect" },
     conceallevel = 0,
@@ -19,7 +19,7 @@ local options = {
     termguicolors = true,
     timeoutlen = 100,
     undofile = true,
-    updatetime = 300,
+    updatetime = 100,
     writebackup = false,
     expandtab = true,
     shiftwidth = 4,
