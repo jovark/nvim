@@ -38,10 +38,7 @@ packer.init {
     },
 }
 
--- Install your plugins here
 return packer.startup(function(use)
-
-    -- My plugins here
     use { "wbthomason/packer.nvim" }
     use { "nvim-lua/popup.nvim" }
     use { "nvim-lua/plenary.nvim" }
@@ -99,7 +96,7 @@ return packer.startup(function(use)
 
     -- Git
     use { "lewis6991/gitsigns.nvim" }
-
+    use { "TimUntersberger/neogit" }
 
     -- At the end after all the plugins
     if PACKER_BOOTSTRAP then

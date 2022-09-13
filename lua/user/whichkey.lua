@@ -11,8 +11,6 @@ local setup = {
             enabled = true, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
             suggestions = 20, -- how many suggestions should be shown in the list?
         },
-        -- the presets plugin, adds help for a bunch of default keybindings in Neovim
-        -- No actual key bindings are created
         presets = {
             operators = false, -- adds help for operators like d, y, ... and registers them for motion / text object completion
             motions = false, -- adds help for motions
@@ -23,15 +21,7 @@ local setup = {
             g = true, -- bindings for prefixed with g
         },
     },
-    -- add operators that will trigger motion and text object completion
-    -- to enable all native operators, set the preset / operators plugin above
-    -- operators = { gc = "Comments" },
     key_labels = {
-        -- override the label used to display some keys. It doesn't effect WK in any other way.
-        -- For example:
-        -- ["<space>"] = "SPC",
-        -- ["<cr>"] = "RET",
-        -- ["<tab>"] = "TAB",
     },
     icons = {
         breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
@@ -85,23 +75,24 @@ local m_opts = {
     nowait = true, -- use `nowait` when creating keymaps
 }
 
+-- Harpoon --
 local m_mappings = {
-    ['j'] = { '<cmd>lua require("harpoon.ui").nav_file(1)<cr>', 'File 1' },
-    ['k'] = { '<cmd>lua require("harpoon.ui").nav_file(2)<cr>', 'File 2' },
-    ['l'] = { '<cmd>lua require("harpoon.ui").nav_file(3)<cr>', 'File 3' },
+    j = { '<cmd>lua require("harpoon.ui").nav_file(1)<cr>', 'File 1' },
+    k = { '<cmd>lua require("harpoon.ui").nav_file(2)<cr>', 'File 2' },
+    l = { '<cmd>lua require("harpoon.ui").nav_file(3)<cr>', 'File 3' },
     [';'] = { '<cmd>lua require("harpoon.ui").nav_file(4)<cr>', 'File 4' },
     m = { '<cmd>lua require("harpoon.mark").add_file()<cr>', "Harpoon" },
     u = { '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', "Harpoon UI" },
 }
 
 local mappings = {
-    ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-    ["h"] = { "<cmd>nohlsearch<CR>", "No HL" },
+    e = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+    h = { "<cmd>nohlsearch<CR>", "No HL" },
     ["/"] = { '<cmd>lua require("Comment.api").toggle.linewise.current()<CR>', "Comment" },
-    ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
-    ["gy"] = "Link",
+    c = { "<cmd>Bdelete!<CR>", "Close Buffer" },
+    g = { "<cmd>Neogit<cr>", "Neogit" },
 
-    p = {
+    P = {
         name = "Packer",
         c = { "<cmd>PackerCompile<cr>", "Compile" },
         i = { "<cmd>PackerInstall<cr>", "Install" },
@@ -125,29 +116,6 @@ local mappings = {
         R = { "<cmd>Telescope registers<cr>", "Registers" },
         k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
         C = { "<cmd>Telescope commands<cr>", "Commands" },
-    },
-
-    g = {
-        name = "Git",
-        g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
-        j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
-        k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
-        l = { "<cmd>GitBlameToggle<cr>", "Blame" },
-        p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
-        r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
-        R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
-        s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
-        u = {
-            "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
-            "Undo Stage Hunk",
-        },
-        o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-        b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-        c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
-        d = {
-            "<cmd>Gitsigns diffthis HEAD<cr>",
-            "Diff",
-        },
     },
 
     l = {

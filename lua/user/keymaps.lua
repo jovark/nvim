@@ -37,13 +37,16 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
+-- Leader yank/delete to clipboard
+keymap("n", "<Leader>y", '"+y', opts)
+keymap("n", "<Leader>d", '"_d', opts)
+
 -- Insert ---------------------------------------------------------------------
--- Press jk fast to enter
-keymap("i", "jk", "<ESC>", opts)
-keymap("i", "kj", "<ESC>", opts)
+-- esc
+keymap("i", "<C-c>", "<ESC>", opts)
 
 -- Copilot
-vim.cmd[[imap <silent><script><expr> <C-l> copilot#Accept("\<CR>")]]
+vim.cmd [[imap <silent><script><expr> <C-l> copilot#Accept("\<CR>")]]
 vim.g.copilot_no_tab_map = true
 
 -- Visual ---------------------------------------------------------------------
@@ -56,6 +59,10 @@ keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 keymap("v", "p", '"_dP', opts)
 
+-- Leader yank/delete to clipboard
+keymap("v", "<Leader>y", '"+y', opts)
+keymap("v", "<Leader>d", '"_d', opts)
+
 -- Visual Block --------------------------------------------------------------
 -- Move text up and down
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
@@ -63,9 +70,16 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
+-- Leader yank/delete to clipboard
+keymap("x", "<leader>y", '"_dP', opts)
+
 -- Terminal ------------------------------------------------------------------
 -- Better terminal navigation
 -- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 -- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+
+-- Noremap = false -----------------------------------------------------------
+-- Leader yank/delete to clipboard
+keymap("n", "<Leader>Y", '"+y', { noremap = false, silent = true })
