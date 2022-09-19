@@ -40,6 +40,7 @@ if colorscheme == "catppuccin" then
             DiagnosticError = { style = {} },
             DiagnosticInfo = { style = {} },
             DiagnosticWarn = { style = {} },
+            TSTagAttribute = { style = {} },
         }
     })
 
