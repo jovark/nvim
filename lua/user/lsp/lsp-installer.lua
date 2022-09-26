@@ -11,11 +11,6 @@ lsp_installer.on_server_ready(function(server)
         capabilities = require("user.lsp.handlers").capabilities,
     }
 
-    if server.name == "jsonls" then
-        local jsonls_opts = require("user.lsp.settings.jsonls")
-        opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
-    end
-
     if server.name == "sumneko_lua" then
         local sumneko_opts = require("user.lsp.settings.sumneko_lua")
         opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
@@ -24,6 +19,11 @@ lsp_installer.on_server_ready(function(server)
     if server.name == "pyright" then
         local pyright_opts = require("user.lsp.settings.pyright")
         opts = vim.tbl_deep_extend("force", pyright_opts, opts)
+    end
+
+    if server.name == "tsserver" then
+        local tsserver_opts = require("user.lsp.settings.tsserver")
+        opts = vim.tbl_deep_extend("force", tsserver_opts, opts)
     end
 
     -- This setup() function is exactly the same as lspconfig's setup function.
