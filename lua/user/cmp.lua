@@ -8,6 +8,11 @@ if not snip_status_ok then
     return
 end
 
+local tabnine_status_ok, tabnine = pcall(require, "cmp_tabnine.config")
+if not tabnine_status_ok then
+    return
+end
+
 require("luasnip/loaders/from_vscode").lazy_load()
 
 local check_backspace = function()
@@ -142,7 +147,6 @@ cmp.setup {
 }
 
 -- Tabnine
-local tabnine = require("cmp_tabnine.config")
 tabnine:setup({
     max_lines = 1000,
     max_num_results = 20,
