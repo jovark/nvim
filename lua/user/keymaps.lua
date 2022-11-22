@@ -41,6 +41,10 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 keymap("n", "<Leader>y", '"+y', opts)
 keymap("n", "<Leader>d", '"_d', opts)
 
+-- Center screen after <C-d> and <C-u>
+keymap("n", "<C-d>", "<C-d>zz", opts)
+keymap("n", "<C-u>", "<C-u>zz", opts)
+
 -- Insert ---------------------------------------------------------------------
 -- esc
 keymap("i", "<C-c>", "<ESC>", opts)
