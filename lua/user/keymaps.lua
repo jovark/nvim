@@ -45,9 +45,18 @@ keymap("n", "<Leader>d", '"_d', opts)
 keymap("n", "<C-d>", "<C-d>zz", opts)
 keymap("n", "<C-u>", "<C-u>zz", opts)
 
+-- Center screen after n/N
+keymap("n", "n", "nzzzv", opts)
+keymap("n", "N", "nzzzv", opts)
+
+-- Dont move cursor after case change
+keymap("n", "~", "~h", opts)
+
 -- Insert ---------------------------------------------------------------------
 -- esc
 keymap("i", "<C-c>", "<ESC>", opts)
+keymap("i", "jk", "<ESC>", opts)
+keymap("i", "kj", "<ESC>", opts)
 
 -- Copilot
 vim.cmd [[imap <silent><script><expr> <C-l> copilot#Accept("\<CR>")]]

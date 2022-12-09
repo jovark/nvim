@@ -77,10 +77,19 @@ end
 hl("LineNr", {
     fg = line_nr_color,
 })
-
--- Couldn't get some italics disabled --
-vim.cmd [[ highlight @tag.attribute gui = none ]]
-vim.cmd [[ highlight @parameter gui=none ]]
-vim.cmd [[ highlight @text.uri gui=none ]]
-vim.cmd [[ highlight BufferLineBufferSelected gui=bold ]]
-vim.cmd [[ highlight @text.literal gui=none ]]
+hl("@parameter", {
+    bg = "none",
+})
+hl("@text.uri", {
+    bg = "none",
+})
+hl("BufferLineBufferSelected", {
+    bold = true,
+})
+hl("@text.literal", {
+    bg = "none",
+})
+hl("@namespace", {
+    bg = "none",
+    fg = "#89b4fa",
+})

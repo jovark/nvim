@@ -66,33 +66,26 @@ local opts = {
     nowait = true, -- use `nowait` when creating keymaps
 }
 
-local m_opts = {
-    mode = "n", -- NORMAL mode
-    prefix = "m",
-    buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-    silent = true, -- use `silent` when creating keymaps
-    noremap = true, -- use `noremap` when creating keymaps
-    nowait = true, -- use `nowait` when creating keymaps
-}
-
--- Harpoon --
-local m_mappings = {
+local mappings = {
+    ["/"] = { '<cmd>lua require("Comment.api").toggle.linewise.current()<CR>', "Comment" },
+    [';'] = { '<cmd>lua require("harpoon.ui").nav_file(4)<cr>', 'File 4' },
+    c = { "<cmd>Bdelete!<CR>", "Close Buffer" },
+    e = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+    f = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "Format" },
+    g = { "<cmd>Neogit<cr>", "Neogit" },
+    h = { "<cmd>nohlsearch<CR>", "No HL" },
     j = { '<cmd>lua require("harpoon.ui").nav_file(1)<cr>', 'File 1' },
     k = { '<cmd>lua require("harpoon.ui").nav_file(2)<cr>', 'File 2' },
     l = { '<cmd>lua require("harpoon.ui").nav_file(3)<cr>', 'File 3' },
-    [';'] = { '<cmd>lua require("harpoon.ui").nav_file(4)<cr>', 'File 4' },
     m = { '<cmd>lua require("harpoon.mark").add_file()<cr>', "Harpoon" },
     u = { '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', "Harpoon UI" },
-}
+    t = {
+        "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+        "Find files",
+    },
 
-local mappings = {
-    e = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-    h = { "<cmd>nohlsearch<CR>", "No HL" },
-    ["/"] = { '<cmd>lua require("Comment.api").toggle.linewise.current()<CR>', "Comment" },
-    c = { "<cmd>Bdelete!<CR>", "Close Buffer" },
-    g = { "<cmd>Neogit<cr>", "Neogit" },
 
-    P = {
+    p = {
         name = "Packer",
         c = { "<cmd>PackerCompile<cr>", "Compile" },
         i = { "<cmd>PackerInstall<cr>", "Install" },
@@ -101,7 +94,7 @@ local mappings = {
         u = { "<cmd>PackerUpdate<cr>", "Update" },
     },
 
-    f = {
+    F = {
         name = "Find",
         c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
         f = {
@@ -118,7 +111,7 @@ local mappings = {
         C = { "<cmd>Telescope commands<cr>", "Commands" },
     },
 
-    l = {
+    L = {
         name = "LSP",
         a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
         f = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "Format" },
@@ -145,20 +138,6 @@ local mappings = {
         b = { "<cmd>lua require('surround').toggle_brackets()<cr>", "Brackets" },
     },
 
-    t = {
-        name = "Terminal",
-        ["1"] = { ":1ToggleTerm<cr>", "1" },
-        ["2"] = { ":2ToggleTerm<cr>", "2" },
-        ["3"] = { ":3ToggleTerm<cr>", "3" },
-        ["4"] = { ":4ToggleTerm<cr>", "4" },
-        n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
-        t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
-        p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
-        f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
-        h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
-        v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
-    },
-
     T = {
         name = "Treesitter",
         h = { "<cmd>TSHighlightCapturesUnderCursor<cr>", "Highlight" },
@@ -182,4 +161,3 @@ local vmappings = {
 which_key.setup(setup)
 which_key.register(mappings, opts)
 which_key.register(vmappings, vopts)
-which_key.register(m_mappings, m_opts)

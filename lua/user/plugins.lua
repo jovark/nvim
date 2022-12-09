@@ -52,9 +52,7 @@ return packer.startup(function(use)
     use { "norcalli/nvim-colorizer.lua" }
     use { "ThePrimeagen/harpoon" }
     use { "Mephistophiles/surround.nvim" }
-    use { "akinsho/toggleterm.nvim" }
     use { "nvim-lualine/lualine.nvim" }
-    use { "goolord/alpha-nvim" }
 
     -- Colorschemes
     use { "Xpunn/dracula.nvim-without-italics" }
