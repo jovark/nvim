@@ -69,7 +69,24 @@ return packer.startup(function(use)
     use { "hrsh7th/cmp-nvim-lsp" }
     use { "hrsh7th/cmp-nvim-lua" }
     use { "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" }
-    use { "github/copilot.vim" }
+
+    -- copilot
+    use {
+        "zbirenbaum/copilot.lua",
+        event = { "VimEnter" },
+        config = function()
+            vim.defer_fn(function()
+                require "user.copilot"
+            end, 100)
+        end,
+    }
+    use {
+        "zbirenbaum/copilot-cmp",
+        after = "copilot.lua",
+        config = function()
+            require("copilot_cmp").setup()
+        end
+    }
 
     -- snippets
     use { "L3MON4D3/LuaSnip" }
