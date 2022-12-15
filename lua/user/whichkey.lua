@@ -68,17 +68,11 @@ local opts = {
 
 local mappings = {
     ["/"] = { '<cmd>lua require("Comment.api").toggle.linewise.current()<CR>', "Comment" },
-    [';'] = { '<cmd>lua require("harpoon.ui").nav_file(4)<cr>', 'File 4' },
     c = { "<cmd>Bdelete!<CR>", "Close Buffer" },
     e = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
     f = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "Format" },
     g = { "<cmd>Neogit<cr>", "Neogit" },
     h = { "<cmd>nohlsearch<CR>", "No HL" },
-    j = { '<cmd>lua require("harpoon.ui").nav_file(1)<cr>', 'File 1' },
-    k = { '<cmd>lua require("harpoon.ui").nav_file(2)<cr>', 'File 2' },
-    l = { '<cmd>lua require("harpoon.ui").nav_file(3)<cr>', 'File 3' },
-    m = { '<cmd>lua require("harpoon.mark").add_file()<cr>', "Harpoon" },
-    u = { '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', "Harpoon UI" },
     t = {
         "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
         "Find files",
