@@ -16,15 +16,12 @@ vim.g.maplocalleader = " "
 
 -- Normal ---------------------------------------------------------------------
 -- Harpoon
-local mark = require("harpoon.mark")
-local ui = require("harpoon.ui")
-
-keymap("n", "<leader>j", function() ui.nav_file(1) end)
-keymap("n", "<leader>k", function() ui.nav_file(2) end)
-keymap("n", "<leader>l", function() ui.nav_file(3) end)
-keymap("n", "<leader>;", function() ui.nav_file(4) end)
-keymap("n", "<leader>m", function() mark.add_file() end)
-keymap("n", "<leader>u", function() ui.toggle_quick_menu() end)
+keymap("n", "<leader>j", function() require("harpoon.ui").nav_file(1) end)
+keymap("n", "<leader>k", function() require("harpoon.ui").nav_file(2) end)
+keymap("n", "<leader>l", function() require("harpoon.ui").nav_file(3) end)
+keymap("n", "<leader>;", function() require("harpoon.ui").nav_file(4) end)
+keymap("n", "<leader>m", function() require("harpoon.mark").add_file() end)
+keymap("n", "<leader>u", function() require("harpoon.ui").toggle_quick_menu() end)
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h")

@@ -20,7 +20,7 @@ local servers = {
     "html",
     "jdtls",
     "jsonls",
-    "sumneko_lua",
+    "lua_ls",
     "tsserver",
     "bashls",
     "dockerls",
@@ -50,9 +50,9 @@ for _, server in pairs(servers) do
         capabilities = require("user.lsp.handlers").capabilities,
     }
 
-    if server == "sumneko_lua" then
-        local sumneko_lua_opts = require "user.lsp.settings.sumneko_lua"
-        opts = vim.tbl_deep_extend("force", sumneko_lua_opts, opts)
+    if server == "lua-language-server" then
+        local lua_ls_opts = require "user.lsp.settings.lua_ls"
+        opts = vim.tbl_deep_extend("force", lua_ls_opts, opts)
     end
 
     if server == "tsserver" then

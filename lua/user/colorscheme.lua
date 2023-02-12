@@ -46,7 +46,6 @@ if colorscheme == "catppuccin" then
 
     local colors = require("catppuccin.palettes").get_palette()
     line_nr_color = colors.blue
-
 elseif colorscheme == "tokyonight" then
     vim.g.tokyonight_style = "night"
 
