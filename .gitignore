@@ -1,5 +1,9 @@
 # Packer
 plugin/packer_compiled.lua 
+
+# Lazy
+lazy-lock.json
+
 # Compiled Lua sources
 luac.out
 
