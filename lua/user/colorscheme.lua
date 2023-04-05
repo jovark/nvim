@@ -1,4 +1,4 @@
-local colorscheme = "catppuccin"
+local colorscheme = "tokyonight"
 local line_nr_color
 
 if colorscheme == "catppuccin" then
@@ -47,17 +47,19 @@ if colorscheme == "catppuccin" then
     local colors = require("catppuccin.palettes").get_palette()
     line_nr_color = colors.blue
 elseif colorscheme == "tokyonight" then
-    vim.g.tokyonight_style = "night"
-
-    -- Disables all italics --
-    vim.g.tokyonight_italic_comments = false
-    vim.g.tokyonight_italic_keywords = false
-    vim.g.tokyonight_italic_functions = false
-    vim.g.tokyonight_italic_keywords = false
-
-    -- Transparency --
-    vim.g.tokyonight_transparent = true
-    vim.g.tokyonight_transparent_sidebar = true
+    require("tokyonight").setup({
+        style = "night",
+        transparent = true,
+        terminal_colors = true,
+        styles = {
+            comments = { italic = false },
+            keywords = { italic = false },
+            functions = { italic = false },
+            variables = { italic = false },
+            floats = "transparent",
+            sidebars = "transparent",
+        }
+    })
 
     line_nr_color = "#7aa2f7"
 end
@@ -76,19 +78,30 @@ end
 hl("LineNr", {
     fg = line_nr_color,
 })
-hl("@parameter", {
+
+if colorscheme == "catppuccin" then
+    hl("@parameter", {
+        bg = "none",
+    })
+    hl("@text.uri", {
+        bg = "none",
+    })
+    hl("@text.literal", {
+        bg = "none",
+    })
+    hl("@namespace", {
+        bg = "none",
+        fg = "#89b4fa",
+    })
+elseif colorscheme == "tokyonight" then
+    hl("TabLineFill", {
+        bg = "none",
+    })
+end
+
+hl("TreesitterContext", {
     bg = "none",
 })
-hl("@text.uri", {
+hl("lualine_c_normal", {
     bg = "none",
-})
-hl("BufferLineBufferSelected", {
-    bold = true,
-})
-hl("@text.literal", {
-    bg = "none",
-})
-hl("@namespace", {
-    bg = "none",
-    fg = "#89b4fa",
 })

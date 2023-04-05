@@ -35,7 +35,6 @@ return lazy.setup({
         'numToStr/Comment.nvim',
         'kyazdani42/nvim-web-devicons',
         'kyazdani42/nvim-tree.lua',
-        'akinsho/bufferline.nvim',
         'moll/vim-bbye',
         'folke/which-key.nvim',
         'norcalli/nvim-colorizer.lua',
