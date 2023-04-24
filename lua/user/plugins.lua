@@ -41,6 +41,7 @@ return lazy.setup({
         'ThePrimeagen/harpoon',
         'Mephistophiles/surround.nvim',
         'nvim-lualine/lualine.nvim',
+        'unblevable/quick-scope',
 
         -- Colorschemes
         'Xpunn/dracula.nvim-without-italics',

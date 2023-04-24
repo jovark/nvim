@@ -101,7 +101,7 @@ local mappings = {
         k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
         C = { "<cmd>Telescope commands<cr>", "Commands" },
     },
-    L = {
+    l = {
         name = "LSP",
         a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
         f = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "Format" },

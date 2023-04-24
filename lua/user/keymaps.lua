@@ -23,6 +23,9 @@ keymap("n", "<leader>;", function() require("harpoon.ui").nav_file(4) end)
 keymap("n", "<leader>m", function() require("harpoon.mark").add_file() end)
 keymap("n", "<leader>u", function() require("harpoon.ui").toggle_quick_menu() end)
 
+-- Code actions
+keymap("n", "<leader>a", function() vim.lsp.buf.code_action() end)
+
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h")
 keymap("n", "<C-j>", "<C-w>j")
