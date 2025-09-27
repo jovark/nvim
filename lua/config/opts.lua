@@ -35,10 +35,10 @@ local options = {
 }
 
 vim.opt.shortmess:append "c"
+vim.opt.iskeyword:append("-")
 
 for k, v in pairs(options) do
     vim.opt[k] = v
 end
 
-vim.cmd "set whichwrap+=<,>,[,],h,l"
-vim.cmd [[set iskeyword+=-]]
+vim.cmd("set whichwrap+=<,>,[,],h,l")
